@@ -17,7 +17,8 @@ func _physics_process(delta):
 	velocity = direction * VELOCIDADE
 	
 	move_and_slide()
-	
+
+func _process(delta):
 	if velocity.length() > 0.0:
 		character.play_walk_animation()
 	else:
@@ -25,12 +26,14 @@ func _physics_process(delta):
 			
 	var mobs_em_alcance = %HurtBox.get_overlapping_bodies()
 	
+	# ERRO:
+	# o area2d reconhecia o proprio player como um mob, e então tomava dano
+	# para isso tem que aumentar a area de colisão do hurtbox
+	# e colocar os mobs em uma collision layer diferente da do player
 	if mobs_em_alcance.size() > 0:
+		
 		vida -= DANO_POR_SEGUNDO * mobs_em_alcance.size() * delta
 		%HealthBar.value = vida
 	
 	if vida <= 0.0:
 		vida_zerada.emit()
-
-func _process(delta):
-	pass

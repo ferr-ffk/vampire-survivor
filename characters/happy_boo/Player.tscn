@@ -8,7 +8,7 @@
 radius = 57.0088
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mdc8r"]
-radius = 41.0122
+radius = 59.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snlr4"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
@@ -26,6 +26,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [node name="Player" type="CharacterBody2D"]
+safe_margin = 40.0
 script = ExtResource("1_eks7j")
 
 [node name="HappyBoo" parent="." instance=ExtResource("1_ndlbd")]
@@ -46,6 +47,7 @@ metadata/_edit_lock_ = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_mdc8r")
