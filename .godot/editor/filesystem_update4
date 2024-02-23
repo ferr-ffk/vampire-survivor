@@ -7,3 +7,8 @@ res://assets/environment/pine_tree.tscn
 res://assets/mobs/slime/slime.tscn
 res://characters/slime/slime.gd
 res://assets/mobs/slime/slime.gd
+res://assets/weapons/pistol.tscn
+res://assets/weapons/pistol.gd
+res://assets/weapons/bullets/bullet.tscn
+res://assets/weapons/bullets/bullet.gd
+res://smoke_explosion/smoke_explosion.gd

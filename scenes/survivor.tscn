@@ -56,3 +56,15 @@ y_sort_enabled = true
 
 [node name="Slime" parent="mobs" instance=ExtResource("3_ss0wp")]
 position = Vector2(1174, 579)
+
+[node name="Slime2" parent="mobs" instance=ExtResource("3_ss0wp")]
+position = Vector2(1384, 720)
+
+[node name="Slime3" parent="mobs" instance=ExtResource("3_ss0wp")]
+position = Vector2(1176, 944)
+
+[node name="Slime4" parent="mobs" instance=ExtResource("3_ss0wp")]
+position = Vector2(1496, 480)
+
+[node name="Slime5" parent="mobs" instance=ExtResource("3_ss0wp")]
+position = Vector2(1336, 256)
