@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const VELOCIDADE = 600
+const VELOCIDADE = 500
 var character
 
 func _ready():
