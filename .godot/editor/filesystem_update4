@@ -4,3 +4,6 @@ res://characters/happy_boo/Player.gd
 res://characters/happy_boo/happy_boo.tscn
 res://scenes/survivor.tscn
 res://assets/environment/pine_tree.tscn
+res://assets/mobs/slime/slime.tscn
+res://characters/slime/slime.gd
+res://assets/mobs/slime/slime.gd

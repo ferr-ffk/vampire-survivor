@@ -1,12 +1,8 @@
 extends CharacterBody2D
 
 const VELOCIDADE = 500
-var character
+@onready var character = %HappyBoo
 
-func _ready():
-	character = %HappyBoo
-	character.play_idle_animation()
-	
 func _physics_process(delta):
 	# necessário para definir os botões de movimento
 	# obtem as strings definidas no input map do projeto
