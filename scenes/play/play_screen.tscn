@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://73a61eatcwee"]
+
+[ext_resource type="PackedScene" uid="uid://bxxfhgp74rgee" path="res://scenes/common/pine_tree/pine_tree.tscn" id="1_ksok7"]
+[ext_resource type="Script" path="res://scenes/play/play_screen.gd" id="1_m64xh"]
+
+[node name="PlayScreen" type="Node2D"]
+script = ExtResource("1_m64xh")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -214.0
+offset_top = -114.0
+offset_right = -214.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.36395, 1.36395)
+color = Color(0.384314, 0.698039, 0.156863, 1)
+
+[node name="PineTree" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(189, 139)
+
+[node name="PineTree2" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(351, 474)
+
+[node name="PineTree3" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1003, 682)
+
+[node name="PineTree4" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1151, 424)
+
+[node name="PineTree5" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1003, 183)
+
+[node name="PineTree6" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(566, 183)
+
+[node name="PineTree7" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(751, 515)
+
+[node name="PineTree8" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(145, 706)
+
+[node name="PineTree9" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1248, 68)
+
+[node name="PineTree10" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1468, 359)
+
+[node name="PineTree11" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1565, 845)
+
+[node name="PineTree12" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1321, 1037)
+
+[node name="PineTree13" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1713, 498)
+
+[node name="PineTree14" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(1713, 68)
+
+[node name="PineTree15" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(-214, 319)
+
+[node name="PineTree16" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(0, -47)
+
+[node name="PineTree17" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(469, 773)
+
+[node name="PineTree18" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(751, 1037)
+
+[node name="PineTree19" parent="Background" instance=ExtResource("1_ksok7")]
+position = Vector2(-141, 1176)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 351.0
+offset_top = 400.0
+offset_right = 351.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Jogar"
+
+[node name="Weapon Shop" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Loja de armas"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sair do jogo"
+
+[connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

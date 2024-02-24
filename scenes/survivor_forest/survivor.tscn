@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://doiqpqqrjyog5"]
 
-[ext_resource type="Script" path="res://scenes/Main.gd" id="1_iabls"]
-[ext_resource type="PackedScene" uid="uid://dbh3bybyqjcjf" path="res://entities/happy_boo/Player.tscn" id="1_xnb45"]
-[ext_resource type="PackedScene" uid="uid://bxxfhgp74rgee" path="res://scenes/common/pine_tree/pine_tree.tscn" id="2_w85a5"]
-[ext_resource type="PackedScene" uid="uid://m6l4j3mqly0d" path="res://entities/slime/slime.tscn" id="4_0kj46"]
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_vj4ph"]
+[ext_resource type="PackedScene" uid="uid://dbh3bybyqjcjf" path="res://entities/happy_boo/Player.tscn" id="2_udsbg"]
+[ext_resource type="PackedScene" uid="uid://bxxfhgp74rgee" path="res://scenes/common/pine_tree/pine_tree.tscn" id="3_vpbm7"]
+[ext_resource type="PackedScene" uid="uid://m6l4j3mqly0d" path="res://entities/slime/slime.tscn" id="4_75hhf"]
 
 [sub_resource type="Curve2D" id="Curve2D_c5ex7"]
 _data = {
@@ -13,7 +13,7 @@ point_count = 5
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_iabls")
+script = ExtResource("1_vj4ph")
 
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -78,7 +78,7 @@ offset_bottom = 1460.0
 color = Color(0.384314, 0.698039, 0.156863, 1)
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("1_xnb45")]
+[node name="Player" parent="." instance=ExtResource("2_udsbg")]
 position = Vector2(684, 401)
 metadata/_edit_lock_ = true
 
@@ -94,38 +94,38 @@ rotation = 1.57976
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="PineTree" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(352, 208)
 
-[node name="PineTree2" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree2" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(936, -6)
 
-[node name="PineTree3" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree3" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(200, 584)
 
-[node name="PineTree9" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree9" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(-495, 936)
 
-[node name="PineTree4" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree4" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(925, 803)
 
-[node name="PineTree6" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree6" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(1611, 66.0001)
 
-[node name="PineTree7" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree7" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(-303, 269)
 
-[node name="PineTree8" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree8" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(-266, -129)
 
-[node name="PineTree5" parent="Environment" instance=ExtResource("2_w85a5")]
+[node name="PineTree5" parent="Environment" instance=ExtResource("3_vpbm7")]
 position = Vector2(1641, 822)
 
 [node name="Mobs" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
 
-[node name="Slime" parent="Mobs" instance=ExtResource("4_0kj46")]
+[node name="Slime" parent="Mobs" instance=ExtResource("4_75hhf")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
