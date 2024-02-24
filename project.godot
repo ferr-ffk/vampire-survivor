@@ -90,7 +90,6 @@ window/size/viewport_height=768
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale=0.75
-mouse_cursor/custom_image="res://icon.png"
 
 [dotnet]
 

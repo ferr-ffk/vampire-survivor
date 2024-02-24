@@ -4,7 +4,7 @@ extends Area2D
 
 var posicao_mouse = null
 
-@onready var timer = %Timer
+@onready var timer = %FireRate
 
 func _process(delta):
 	if Input.is_action_pressed("shoot") and timer.is_stopped():
@@ -23,6 +23,3 @@ func shoot():
 	
 	%ShootingPoint.add_child(bala)
 	timer.start()
-
-func _on_timer_timeout():
-	pass

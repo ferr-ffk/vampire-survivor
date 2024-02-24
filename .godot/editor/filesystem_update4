@@ -12,3 +12,4 @@ res://scripts/weapons/pistol.tscn
 res://entities/slime/slime.gd
 res://entities/weapons/pistol.tscn
 res://entities/weapons/pistol.gd
+res://entities/happy_boo/player_animation/happy_boo.tscn
