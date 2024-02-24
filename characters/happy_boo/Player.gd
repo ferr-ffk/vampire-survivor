@@ -2,8 +2,7 @@ extends CharacterBody2D
 
 signal vida_zerada
 
-var vida = 100.0
-const DANO_POR_SEGUNDO = 8.0
+@export var vida = Game.player_hp
 
 const VELOCIDADE = 500
 @onready var character = %HappyBoo
@@ -26,14 +25,14 @@ func _process(delta):
 			
 	var mobs_em_alcance = %HurtBox.get_overlapping_bodies()
 	
-	# ERRO:
+	# ERRO RESOLVIDO:
 	# o area2d reconhecia o proprio player como um mob, e então tomava dano
 	# para isso tem que aumentar a area de colisão do hurtbox
 	# e colocar os mobs em uma collision layer diferente da do player
 	if mobs_em_alcance.size() > 0:
-		
-		vida -= DANO_POR_SEGUNDO * mobs_em_alcance.size() * delta
+		vida -= Game.slime_dano * mobs_em_alcance.size() * delta
 		%HealthBar.value = vida
 	
 	if vida <= 0.0:
 		vida_zerada.emit()
+		

@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var dano = Game.pistol_dano
 
 func _physics_process(delta):
 	var inimigos = get_overlapping_bodies()

@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-var health = 3
+@export var health = 25.0
+
+@onready var character = %Slime
+@onready var player = $"../../Player"
 
 const VELOCIDADE = 300.0
 
-@onready var character = %Slime
-@onready var player = get_node("/root/Game/Player")
-
 func _ready():
-	character.play_walk()
+	pass
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -17,13 +17,11 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-func take_damage():
-	health -= 1
+func take_damage(dano: int):
+	health -= dano
 	
-	if health == 0:
-		const EXPLOSAO_CENA = preload("res://smoke_explosion/smoke_explosion.tscn")
-		
-		var explosao = EXPLOSAO_CENA.instantiate()
+	if health <= 0:
+		var explosao = preload("res://smoke_explosion/smoke_explosion.tscn").instantiate()
 		
 		get_parent().add_child(explosao)
 		explosao.global_position = global_position

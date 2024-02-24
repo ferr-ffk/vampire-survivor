@@ -1,7 +1,10 @@
 extends Area2D
 
+var dano = Game.pistol_dano
+
 const VELOCIDADE = 1200.0
 const ALCANCE = 1000
+
 var distancia = 0
 
 func _physics_process(delta):
@@ -20,5 +23,5 @@ func _on_body_entered(body):
 	queue_free()
 	
 	if body.has_method("take_damage"):
-		body.take_damage()
+		body.take_damage(dano)
 		

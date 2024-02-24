@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://doiqpqqrjyog5"]
+[gd_scene load_steps=6 format=3 uid="uid://doiqpqqrjyog5"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_iabls"]
 [ext_resource type="PackedScene" uid="uid://dbh3bybyqjcjf" path="res://characters/happy_boo/Player.tscn" id="1_xnb45"]
 [ext_resource type="PackedScene" uid="uid://bxxfhgp74rgee" path="res://assets/environment/pine_tree.tscn" id="2_w85a5"]
+[ext_resource type="PackedScene" uid="uid://m6l4j3mqly0d" path="res://assets/mobs/slime/slime.tscn" id="4_0kj46"]
 
 [sub_resource type="Curve2D" id="Curve2D_c5ex7"]
 _data = {
@@ -107,6 +108,8 @@ position = Vector2(1641, 822)
 [node name="Mobs" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
+
+[node name="Slime" parent="Mobs" instance=ExtResource("4_0kj46")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

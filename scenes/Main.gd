@@ -1,18 +1,15 @@
 extends Node2D
 
 func _ready():
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
+	spawn_mobs(5)
 
 func _on_timer_timeout():
-	spawn_mobs(3)
+	spawn_mobs(4)
 	
 func spawn_mob():
 	var mob = preload("res://assets/mobs/slime/slime.tscn").instantiate()
 	
+	# pega um ponto aleatório na reta
 	%PathFollow2D.progress_ratio = randf()
 	
 	mob.global_position = %PathFollow2D.global_position
