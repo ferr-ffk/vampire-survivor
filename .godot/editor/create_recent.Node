@@ -1,3 +1,7 @@
+Pistol
+Sprite2D
+Marker2D
+Timer
 ColorRect
 CanvasLayer
 VBoxContainer
@@ -8,7 +12,3 @@ AnimatedSprite2D
 HBoxContainer
 RichTextLabel
 Label
-CenterContainer
-CanvasGroup
-Timer
-PathFollow2D

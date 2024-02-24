@@ -15,58 +15,6 @@ point_count = 5
 y_sort_enabled = true
 script = ExtResource("1_vj4ph")
 
-[node name="GameOverScreen" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="GameOverScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2006.0
-offset_top = -1076.0
-offset_right = 2006.0
-offset_bottom = 1076.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.290196)
-
-[node name="Label" type="Label" parent="GameOverScreen/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -564.5
-offset_top = -281.5
-offset_right = 564.5
-offset_bottom = 281.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 126
-text = "Você morreu!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayAgain" type="Button" parent="GameOverScreen/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -177.0
-offset_top = 149.0
-offset_right = 169.0
-offset_bottom = 223.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 31
-text = "Jogar novamente"
-
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
@@ -126,11 +74,81 @@ unique_name_in_owner = true
 y_sort_enabled = true
 
 [node name="Slime" parent="Mobs" instance=ExtResource("4_75hhf")]
+position = Vector2(-733, 666)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 autostart = true
 
-[connection signal="pressed" from="GameOverScreen/ColorRect/PlayAgain" to="." method="_on_play_again_pressed"]
+[node name="GameOverScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2006.0
+offset_top = -1076.0
+offset_right = 2006.0
+offset_bottom = 1076.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.290196)
+
+[node name="Label" type="Label" parent="GameOverScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.5
+offset_top = -281.5
+offset_right = 564.5
+offset_bottom = 281.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 126
+text = "Você morreu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayAgain" type="Button" parent="GameOverScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = 149.0
+offset_right = -40.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+text = "Jogar novamente"
+
+[node name="Quit" type="Button" parent="GameOverScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 38.0
+offset_top = 149.0
+offset_right = 384.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+text = "Voltar para menu principal"
+
 [connection signal="vida_zerada" from="Player" to="." method="_on_player_vida_zerada"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOverScreen/ColorRect/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="GameOverScreen/ColorRect/Quit" to="." method="_on_quit_pressed"]

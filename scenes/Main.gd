@@ -31,5 +31,7 @@ func _on_play_again_pressed():
 	Engine.time_scale = 1
 	
 	%GameOverScreen.visible = false
-	print("pressionado")
-	get_tree().change_scene_to_file("res://scenes/survivor.tscn")
+	get_tree().reload_current_scene()
+
+func _on_quit_pressed():
+	get_tree().change_scene_to_file("res://scenes/play/play_screen.tscn")

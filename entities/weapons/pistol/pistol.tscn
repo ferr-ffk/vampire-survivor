@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqm05hiponili"]
+
+[ext_resource type="Script" path="res://entities/weapons/pistol/pistol.gd" id="1_k7knh"]
+[ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://entities/weapons/pistol/pistol.png" id="2_hubs2"]
+[ext_resource type="PackedScene" uid="uid://cw00n8ramkf5u" path="res://entities/weapons/gun.tscn" id="2_tjesb"]
+
+[node name="Pistol" type="Node2D"]
+script = ExtResource("1_k7knh")
+
+[node name="Gun" parent="." node_paths=PackedStringArray("shootingPoint", "sprite") instance=ExtResource("2_tjesb")]
+dano = 8.5
+fireRate = 0.2
+shootingPoint = NodePath("ShootingPoint")
+sprite = NodePath("Sprite2D")
+
+[node name="ShootingPoint" type="Marker2D" parent="Gun"]
+unique_name_in_owner = true
+position = Vector2(182, -28)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gun"]
+position = Vector2(130, 0)
+texture = ExtResource("2_hubs2")

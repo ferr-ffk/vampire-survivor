@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var health = 25.0
+@export var health : float = 25.0
 
 @onready var character = %Slime
 @onready var player = $"../../Player"
@@ -8,7 +8,7 @@ extends CharacterBody2D
 const VELOCIDADE = 300.0
 
 func _ready():
-	pass
+	character.play_walk()
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)

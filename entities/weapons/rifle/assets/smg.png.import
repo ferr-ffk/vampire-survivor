@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn80eu1qs371v"
-path="res://.godot/imported/circle.png-a2fa3270dee1c1c7e1cb0869903e82df.ctex"
+uid="uid://xok1unchkfaj"
+path="res://.godot/imported/smg.png-aa63bec79c8a3b49a40b2ea4c0560db0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pistol/impact/circle.png"
-dest_files=["res://.godot/imported/circle.png-a2fa3270dee1c1c7e1cb0869903e82df.ctex"]
+source_file="res://entities/weapons/rifle/assets/smg.png"
+dest_files=["res://.godot/imported/smg.png-aa63bec79c8a3b49a40b2ea4c0560db0.ctex"]
 
 [params]
 

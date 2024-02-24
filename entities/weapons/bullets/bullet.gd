@@ -1,6 +1,7 @@
 extends Area2D
+class_name Bullet
 
-var dano = Game.pistol_dano
+@export var dano: float = Game.pistol_dano
 
 const VELOCIDADE = 1200.0
 const ALCANCE = 1000

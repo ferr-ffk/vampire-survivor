@@ -5,3 +5,4 @@ extends Node
 @export var slime_dano = 10.0
 
 @export var pistol_dano = 8.5
+@export var rifle_dano = 17.0

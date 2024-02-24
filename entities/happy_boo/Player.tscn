@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://entities/happy_boo/Player.gd" id="1_eks7j"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://entities/happy_boo/player_animation/happy_boo.tscn" id="1_ndlbd"]
-[ext_resource type="PackedScene" uid="uid://dqm05hiponili" path="res://entities/weapons/pistol.tscn" id="3_cs06x"]
+[ext_resource type="PackedScene" uid="uid://dqm05hiponili" path="res://entities/weapons/pistol/pistol.tscn" id="3_8xlrr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1wof"]
 radius = 57.0088
@@ -83,10 +83,6 @@ value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Pistol" parent="." instance=ExtResource("3_cs06x")]
-position = Vector2(18, 0)
-scale = Vector2(0.66778, 0.66778)
-
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_mask = 2
@@ -96,3 +92,5 @@ position = Vector2(18, 4)
 scale = Vector2(1.11632, 1.11632)
 shape = SubResource("CircleShape2D_mdc8r")
 debug_color = Color(0.996078, 0, 0.164706, 0.419608)
+
+[node name="Pistol" parent="." instance=ExtResource("3_8xlrr")]

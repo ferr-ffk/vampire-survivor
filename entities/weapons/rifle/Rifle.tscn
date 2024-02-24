@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx3lb7tvdsusn"]
+
+[ext_resource type="PackedScene" uid="uid://cw00n8ramkf5u" path="res://entities/weapons/gun.tscn" id="1_jhjmo"]
+[ext_resource type="Script" path="res://entities/weapons/rifle/Rifle.gd" id="1_r5pnk"]
+[ext_resource type="Texture2D" uid="uid://xok1unchkfaj" path="res://entities/weapons/rifle/assets/smg.png" id="2_43ygg"]
+
+[node name="Rifle" type="Node2D"]
+script = ExtResource("1_r5pnk")
+
+[node name="Gun" parent="." node_paths=PackedStringArray("shootingPoint", "sprite") instance=ExtResource("1_jhjmo")]
+fireRate = 0.05
+shootingPoint = NodePath("WeaponPivot")
+sprite = NodePath("Sprite2D")
+
+[node name="WeaponPivot" type="Marker2D" parent="Gun"]
+position = Vector2(194.197, -13.3663)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gun"]
+position = Vector2(109.197, -0.366306)
+scale = Vector2(0.493895, 0.493895)
+texture = ExtResource("2_43ygg")
