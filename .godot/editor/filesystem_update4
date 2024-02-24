@@ -3,3 +3,12 @@ res://assets/mobs/slime/slime.tscn
 res://characters/happy_boo/Player.tscn
 res://assets/weapons/pistol.tscn
 res://scenes/Main.gd
+res://scripts/mobs/slime/slime.tscn
+res://scripts/weapons/pistol.gd
+res://characters/slime/slime.tscn
+res://entities/slime/slime.tscn
+res://entities/happy_boo/Player.tscn
+res://scripts/weapons/pistol.tscn
+res://entities/slime/slime.gd
+res://entities/weapons/pistol.tscn
+res://entities/weapons/pistol.gd

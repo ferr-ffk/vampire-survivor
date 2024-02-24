@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://doiqpqqrjyog5"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_iabls"]
+[ext_resource type="PackedScene" uid="uid://dbh3bybyqjcjf" path="res://entities/happy_boo/Player.tscn" id="1_xnb45"]
+[ext_resource type="PackedScene" uid="uid://bxxfhgp74rgee" path="res://scripts/environment/pine_tree.tscn" id="2_w85a5"]
+[ext_resource type="PackedScene" uid="uid://m6l4j3mqly0d" path="res://entities/slime/slime.tscn" id="4_0kj46"]
+
+[sub_resource type="Curve2D" id="Curve2D_c5ex7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2376, -472, 0, 0, 0, 0, 2360, 1312, 0, 0, 0, 0, -1072, 1360, 0, 0, 0, 0, -1040, -544, 0, 0, 0, 0, 2376, -472)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_iabls")
+
+[node name="GameOverScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2006.0
+offset_top = -1076.0
+offset_right = 2006.0
+offset_bottom = 1076.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.290196)
+
+[node name="Label" type="Label" parent="GameOverScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.5
+offset_top = -281.5
+offset_right = 564.5
+offset_bottom = 281.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 126
+text = "Você morreu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayAgain" type="Button" parent="GameOverScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = 149.0
+offset_right = 169.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+text = "Jogar novamente"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = -1322.0
+offset_top = -692.0
+offset_right = 2690.0
+offset_bottom = 1460.0
+color = Color(0.384314, 0.698039, 0.156863, 1)
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_xnb45")]
+position = Vector2(684, 401)
+metadata/_edit_lock_ = true
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-684, -401)
+curve = SubResource("Curve2D_c5ex7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(2376, -472)
+rotation = 1.57976
+
+[node name="Environment" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PineTree" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(352, 208)
+
+[node name="PineTree2" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(936, -6)
+
+[node name="PineTree3" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(200, 584)
+
+[node name="PineTree9" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(-495, 936)
+
+[node name="PineTree4" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(925, 803)
+
+[node name="PineTree6" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(1611, 66.0001)
+
+[node name="PineTree7" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(-303, 269)
+
+[node name="PineTree8" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(-266, -129)
+
+[node name="PineTree5" parent="Environment" instance=ExtResource("2_w85a5")]
+position = Vector2(1641, 822)
+
+[node name="Mobs" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Slime" parent="Mobs" instance=ExtResource("4_0kj46")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="pressed" from="GameOverScreen/ColorRect/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="vida_zerada" from="Player" to="." method="_on_player_vida_zerada"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
