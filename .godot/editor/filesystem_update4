@@ -1,9 +1,5 @@
 res://scenes/survivor.tscn
-res://characters/happy_boo/Player.tscn
-res://assets/mobs/slime/slime.gd
 res://assets/mobs/slime/slime.tscn
-res://characters/happy_boo/Player.gd
-res://Global/Game.gd
-res://assets/weapons/pistol.gd
+res://characters/happy_boo/Player.tscn
 res://assets/weapons/pistol.tscn
 res://scenes/Main.gd

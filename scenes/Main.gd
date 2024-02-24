@@ -22,10 +22,12 @@ func spawn_mobs(qtd):
 
 func _on_player_vida_zerada():
 	%GameOverScreen.visible = true
-	
-	get_tree().paused = true
+	# pausa o jogo
+	Engine.time_scale = 0
 
-
-
-func _on_play_again_button_pressed():
-	pass
+func _on_play_again_pressed():
+	# retoma o jogo
+	Engine.time_scale = 1
+	%GameOverScreen.visible = false
+	print("pressionado")
+	get_tree().change_scene_to_file("res://scenes/survivor.tscn")
