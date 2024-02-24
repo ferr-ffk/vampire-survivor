@@ -4,3 +4,6 @@ res://assets/mobs/slime/slime.gd
 res://assets/mobs/slime/slime.tscn
 res://characters/happy_boo/Player.gd
 res://Global/Game.gd
+res://assets/weapons/pistol.gd
+res://assets/weapons/pistol.tscn
+res://scenes/Main.gd

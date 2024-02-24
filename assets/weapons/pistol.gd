@@ -2,14 +2,17 @@ extends Area2D
 
 @export var dano = Game.pistol_dano
 
+var posicao_mouse = null
+
+@onready var timer = %Timer
+
+func _process(delta):
+	if Input.is_action_pressed("shoot") and timer.is_stopped():
+		shoot()
+
 func _physics_process(delta):
-	var inimigos = get_overlapping_bodies()
-	
-	if inimigos.size() > 0:
-		# seleciona o inimigo mais perto
-		var inimigo_em_alvo = inimigos.front()
-		
-		look_at(inimigo_em_alvo.global_position)
+	posicao_mouse = get_global_mouse_position()
+	look_at(posicao_mouse)
 
 func shoot():
 	# cria um node de bala e adiciona ao marker 'ShootingPoint' do cano da arma
@@ -21,7 +24,7 @@ func shoot():
 	bala.global_rotation = %ShootingPoint.global_rotation
 	
 	%ShootingPoint.add_child(bala)
-
+	timer.start()
 
 func _on_timer_timeout():
-	shoot()
+	pass
