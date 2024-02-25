@@ -1,6 +1,8 @@
 extends Marker2D
 class_name Gun
 
+signal shoot_pressed
+
 @onready var timer = %FireRate
 
 @export var dano: float
@@ -18,19 +20,10 @@ func _ready():
 	
 func _process(delta):
 	if Input.is_action_pressed("shoot") and timer.is_stopped():
-		shoot()
+		shoot_pressed.emit()	
+		timer.start()
 
 func _physics_process(delta):
 	posicao_mouse = get_global_mouse_position()
 	self.look_at(posicao_mouse)
-
-func shoot():
-	# cria um node de bala e adiciona ao marker 'ShootingPoint' do cano da arma
-	var bala = preload("res://entities/weapons/bullets/bullet.tscn").instantiate()
 	
-	bala.global_position = shootingPoint.global_position
-	bala.global_rotation = shootingPoint.global_rotation
-	bala.dano = self.dano
-	
-	shootingPoint.add_child(bala)
-	timer.start()

@@ -20,3 +20,5 @@ position = Vector2(182, -28)
 [node name="Sprite2D" type="Sprite2D" parent="Gun"]
 position = Vector2(130, 0)
 texture = ExtResource("2_hubs2")
+
+[connection signal="shoot_pressed" from="Gun" to="." method="_on_gun_shoot_pressed"]

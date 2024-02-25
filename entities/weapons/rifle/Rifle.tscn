@@ -8,7 +8,8 @@
 script = ExtResource("1_r5pnk")
 
 [node name="Gun" parent="." node_paths=PackedStringArray("shootingPoint", "sprite") instance=ExtResource("1_jhjmo")]
-fireRate = 0.05
+dano = 12.5
+fireRate = 0.5
 shootingPoint = NodePath("WeaponPivot")
 sprite = NodePath("Sprite2D")
 
@@ -19,3 +20,5 @@ position = Vector2(194.197, -13.3663)
 position = Vector2(109.197, -0.366306)
 scale = Vector2(0.493895, 0.493895)
 texture = ExtResource("2_43ygg")
+
+[connection signal="shoot_pressed" from="Gun" to="." method="_on_gun_shoot_pressed"]
